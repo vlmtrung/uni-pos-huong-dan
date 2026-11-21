@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hướng dẫn sử dụng Uni POS</title>
+  <meta name="description" content="Dùng Uni POS từ đầu tới cuối: chuẩn bị hàng hóa, nhập hàng, quy đổi thùng, bán hàng, ghi nợ và thu nợ, xuất kho.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html" aria-label="Uni POS, trang chủ hướng dẫn">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" stroke="#1c7646" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M16 17C9 17 5 12.5 5 6c7 0 11 4 11 11z" fill="#1c7646"/><path d="M16 14c0-6 3.6-9.5 11-9.5 0 6.5-4 9.5-11 9.5z" fill="#4cae7a"/></svg>
+      Uni POS
+    </a>
+    <nav aria-label="Các trang hướng dẫn">
+      <a href="cai-dat.html">Cài đặt</a>
+      <a href="su-dung.html" aria-current="page">Sử dụng</a>
+    </nav>
+  </div>
+</header>
+
+<main class="layout">
+  <nav class="toc" aria-label="Mục lục">
+    <strong>Trong trang này</strong>
+    <ol>
+      <li><a href="#lam-quen">Làm quen màn hình</a></li>
+      <li><a href="#hang-hoa">Chuẩn bị hàng hóa</a></li>
+      <li><a href="#nhap-hang">Nhập hàng từ nhà cung cấp</a></li>
+      <li><a href="#quy-doi">Quy đổi thùng ra số lẻ</a></li>
+      <li><a href="#ban-hang">Bán hàng</a></li>
+      <li><a href="#cong-no">Ghi nợ và thu nợ khách</a></li>
+      <li><a href="#no-ncc">Nợ nhà cung cấp</a></li>
+      <li><a href="#xuat-kho">Xuất kho</a></li>
+      <li><a href="#sua-sai">Sửa sai: hủy đơn, trả hàng</a></li>
+      <li><a href="#cuoi-ngay">Cuối ngày</a></li>
+    </ol>
+  </nav>
+
+  <article>
+  <section class="hero">
+    <h1>Hướng dẫn sử dụng</h1>
+    <p>Đi một vòng từ nhập hàng, bán hàng đến thu nợ. Đọc lần lượt hoặc nhảy tới phần cần dùng.</p>
+  </section>
+
+  <h2 id="lam-quen">Làm quen màn hình</h2>
+  <p class="lead">Đăng nhập bằng <strong>số điện thoại</strong> và <strong>mật khẩu</strong> của bạn. Menu nằm bên trái, nút <span class="btn-name">Bán hàng</span> màu xanh ngọc ở góc trên mở ngay màn bán hàng.</p>
+  <figure>
+    <a href="assets/img/tong-quan.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/tong-quan.jpg" alt="Màn hình Tổng quan với menu bên trái"></a>
+    <figcaption>Màn Tổng quan. Bấm vào ảnh để xem lớn.</figcaption>
+  </figure>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Menu</th><th>Dùng để</th></tr></thead>
+      <tbody>
+        <tr><td>Hàng hóa</td><td>Danh sách hàng, <strong>Nhập hàng</strong>, Kiểm kho, <strong>Xuất kho</strong>, Báo cáo tồn kho, Thiết lập giá.</td></tr>
+        <tr><td>Giao dịch</td><td><strong>Đơn hàng</strong> đã bán, Trả hàng.</td></tr>
+        <tr><td>Đối tác</td><td><strong>Khách hàng</strong>, <strong>Nhà cung cấp</strong>, Đối tác giao hàng.</td></tr>
+        <tr><td>Công nợ</td><td>Tổng hợp khách còn nợ.</td></tr>
+        <tr><td>Sổ quỹ, Báo cáo</td><td>Thu chi trong ngày và các báo cáo.</td></tr>
+        <tr><td>Quản lý</td><td>Cài đặt cửa hàng, người dùng, máy in, sao lưu (dành cho Quản lý).</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip"><strong>Phím tắt ở màn bán hàng:</strong> <kbd class="btn-name">F1</kbd> tìm hàng, <kbd class="btn-name">F4</kbd> tìm khách hàng.</div>
+
+  <h2 id="hang-hoa">Chuẩn bị hàng hóa</h2>
+  <p class="lead">Làm một lần khi bắt đầu, sau đó chỉ thêm hàng mới.</p>
+  <ol class="steps">
+    <li>
+      <h3>Thêm hàng hóa</h3>
+      <p>Vào <strong>Hàng hóa</strong> → <strong>Danh sách hàng hóa</strong> → <span class="btn-name">Thêm hàng hóa</span>. Điền mã hàng, tên hàng, nhóm hàng, <strong>đơn vị tính</strong> (kg, chai, bao…), <strong>giá vốn</strong> và <strong>giá bán</strong>.</p>
+      <figure>
+        <a href="assets/img/hang-hoa.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/hang-hoa.jpg" alt="Danh sách hàng hóa có cột Quy cách thùng và Tồn kho"></a>
+        <figcaption>Danh sách hàng hóa. Cột "Quy cách thùng" cho biết 1 thùng có bao nhiêu đơn vị lẻ.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h3>Nếu hàng bán theo thùng, khai quy cách thùng</h3>
+      <p>Trong phần <strong>Quy cách thùng, trọng lượng</strong>, điền <strong>Quy cách thùng (đơn vị lẻ / thùng)</strong>. Ví dụ "Humic 20 KG/T" có đơn vị tính là KG, quy cách thùng là <strong>20</strong>. Phần quy đổi ở dưới sẽ dùng số này.</p>
+    </li>
+    <li>
+      <h3>Có sẵn danh sách lớn? Nhập từ Excel</h3>
+      <p>Bấm <span class="btn-name">File mẫu</span> để tải file mẫu, điền hàng vào, rồi bấm <span class="btn-name">Nhập từ Excel</span>. Khách hàng và nhà cung cấp cũng nhập được theo cách này.</p>
+    </li>
+    <li>
+      <h3>Thêm khách hàng và nhà cung cấp</h3>
+      <p>Vào <strong>Đối tác</strong> → <strong>Khách hàng</strong> → <span class="btn-name">Thêm khách hàng</span>, và <strong>Nhà cung cấp</strong> → <span class="btn-name">Thêm nhà cung cấp</span>. Khách mua chịu hoặc nhà cung cấp cho chịu hàng đều cần có trong danh sách trước.</p>
+    </li>
+  </ol>
+
+  <h2 id="nhap-hang">Nhập hàng từ nhà cung cấp</h2>
+  <p class="lead">Mỗi lần hàng về kho, lập một phiếu nhập. Tồn kho và công nợ nhà cung cấp tự cập nhật.</p>
+  <ol class="steps">
+    <li>
+      <h3>Mở màn Nhập hàng</h3>
+      <p>Vào <strong>Hàng hóa</strong> → <strong>Nhập hàng</strong>, bấm <span class="btn-name">Tạo phiếu nhập</span>.</p>
+    </li>
+    <li>
+      <h3>Thêm hàng vào phiếu</h3>
+      <p>Gõ mã hoặc tên vào ô <strong>Tìm hàng hóa theo mã hoặc tên</strong>, bấm vào hàng cần nhập. Với mỗi dòng, điền <strong>Số lượng</strong> và <strong>Đơn giá nhập</strong>. Hàng bán theo thùng có thêm cột <strong>SL Thùng</strong> (xem phần quy đổi bên dưới).</p>
+      <figure>
+        <a href="assets/img/nhap-hang-phieu.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/nhap-hang-phieu.jpg" alt="Phiếu nhập hàng có hai dòng hàng, cột SL Thùng, và khung thanh toán bên phải"></a>
+        <figcaption>Phiếu nhập hàng. Bên phải là nhà cung cấp, tổng tiền và thanh toán.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h3>Chọn nhà cung cấp</h3>
+      <p>Ở khung bên phải, gõ tên vào ô tìm <strong>nhà cung cấp</strong> và chọn. Khung này hiện luôn <strong>Nợ hiện tại</strong> của nhà cung cấp đó.</p>
+    </li>
+    <li>
+      <h3>Trả tiền hoặc ghi nợ</h3>
+      <p>Nhập <strong>Tiền trả nhà cung cấp</strong> và chọn <span class="btn-name">Tiền mặt</span>, <span class="btn-name">Chuyển khoản</span> hoặc <span class="btn-name">Thẻ</span>. Phần <strong>chưa trả</strong> tự ghi vào <strong>công nợ</strong> với nhà cung cấp (dòng "Tính vào công nợ"). Chưa trả đồng nào thì để tiền trả bằng 0.</p>
+    </li>
+    <li>
+      <h3>Hoàn thành</h3>
+      <p>Bấm <span class="btn-name">Hoàn thành</span> khi đã nhập xong. Nếu chưa xong, bấm <span class="btn-name">Lưu tạm</span> để làm tiếp sau.</p>
+      <figure>
+        <a href="assets/img/nhap-hang-xong.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/nhap-hang-xong.jpg" alt="Danh sách phiếu nhập sau khi hoàn thành một phiếu"></a>
+        <figcaption>Phiếu đã hoàn thành nằm trong danh sách phiếu nhập.</figcaption>
+      </figure>
+    </li>
+  </ol>
+
+  <h2 id="quy-doi">Quy đổi thùng ra số lẻ</h2>
+  <p class="lead">Hàng nhập hoặc bán theo thùng, nhưng giá và kho tính theo đơn vị lẻ (kg, chai, gói). App tự quy đổi cho bạn.</p>
+  <div class="note">
+    <strong>Ví dụ:</strong> "Humic 20 KG/T", 1 thùng = 20 kg.
+    <ul>
+      <li>Gõ <strong>5 thùng</strong> → số lượng tự thành <strong>100 kg</strong>.</li>
+      <li>Hoặc gõ <strong>30 kg</strong> → tự hiện <strong>1,5 thùng</strong>.</li>
+    </ul>
+  </div>
+  <ol class="steps">
+    <li>
+      <h3>Khai quy cách thùng một lần</h3>
+      <p>Ở <a href="#hang-hoa">Chuẩn bị hàng hóa</a>, điền <strong>Quy cách thùng</strong> cho hàng đó (ví dụ 20).</p>
+    </li>
+    <li>
+      <h3>Nhập số thùng ở màn Nhập hàng hoặc Bán hàng</h3>
+      <p>Cột <strong>SL Thùng</strong> chỉ hiện khi phiếu hoặc giỏ hàng có hàng đã khai quy cách thùng. Gõ số thùng, cột <strong>Số lượng</strong> tự tính. Gõ ngược lại số lượng lẻ, số thùng cũng tự tính (có thể ra số lẻ như 1,5 thùng).</p>
+      <figure>
+        <a href="assets/img/ban-hang-quy-doi-thung.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/ban-hang-quy-doi-thung.jpg" alt="Giỏ hàng có cột SL Thùng, gõ 3 thùng ra số lượng tương ứng"></a>
+        <figcaption>Màn bán hàng: gõ số thùng ở cột SL Thùng, số lượng lẻ tự tính.</figcaption>
+      </figure>
+    </li>
+  </ol>
+  <div class="warn"><strong>Lưu ý:</strong> đơn giá luôn là giá của <strong>một đơn vị lẻ</strong> (một kg, một chai), không phải giá cả thùng. Tồn kho cũng hiển thị theo đơn vị lẻ.</div>
+
+  <h2 id="ban-hang">Bán hàng</h2>
+  <ol class="steps">
+    <li>
+      <h3>Mở màn bán hàng</h3>
+      <p>Bấm nút <span class="btn-name">Bán hàng</span> màu xanh ngọc ở góc trên. Mỗi hóa đơn là một thẻ ở trên cùng (<strong>Hóa đơn 1</strong>), bấm dấu <strong>+</strong> để mở thêm hóa đơn khác khi có nhiều khách cùng lúc.</p>
+    </li>
+    <li>
+      <h3>Thêm hàng vào giỏ</h3>
+      <p>Gõ tên hoặc mã vào ô tìm (phím <kbd class="btn-name">F1</kbd>), hoặc bấm trực tiếp vào ô hàng ở phía trên. Chỉnh số lượng bằng nút <strong>+</strong>, <strong>−</strong> hoặc gõ số. Muốn giảm giá thì nhập số tiền (VNĐ) hoặc phần trăm ở cột <strong>Giảm giá</strong>, hoặc bấm nhanh 5%, 10%, 15%.</p>
+      <figure>
+        <a href="assets/img/ban-hang.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/ban-hang.jpg" alt="Màn bán hàng với giỏ hai món, tổng tiền và các phương thức thanh toán"></a>
+        <figcaption>Màn bán hàng: giỏ hàng bên trái, khách và thanh toán bên phải.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h3>Chọn khách (nếu cần)</h3>
+      <p>Khách mua lẻ trả tiền ngay thì không cần chọn. Khách quen hoặc khách mua chịu: gõ vào ô <strong>Tìm khách hàng</strong> (phím <kbd class="btn-name">F4</kbd>) và chọn.</p>
+    </li>
+    <li>
+      <h3>Chọn cách thanh toán và nhập tiền khách đưa</h3>
+      <p>Chọn <span class="btn-name">Tiền mặt</span>, <span class="btn-name">Chuyển khoản</span>, <span class="btn-name">Thẻ</span> hoặc <span class="btn-name">Ví</span>. Với tiền mặt, nhập <strong>Tiền khách đưa</strong>, app tính tiền thừa phải trả lại.</p>
+    </li>
+    <li>
+      <h3>Thanh toán và in hóa đơn</h3>
+      <p>Bấm <span class="btn-name">Thanh toán</span>, kiểm tra tóm tắt rồi xác nhận. Hóa đơn hiện ra, bấm <span class="btn-name">In hóa đơn</span>. Dưới nút in có dòng cho biết đang dùng máy in nào; bấm vào đó nếu muốn in ra máy khác cho lần này.</p>
+      <div class="note"><strong>Chuyển khoản:</strong> hóa đơn có mã QR. Khi tiền về, bấm <span class="btn-name">Đã nhận tiền</span> thì nút in mới dùng được. Chưa bấm mà đóng hộp thoại thì đơn vẫn được lưu, và bạn xác nhận sau ở mục Đơn hàng.</div>
+    </li>
+  </ol>
+
+  <h2 id="cong-no">Ghi nợ và thu nợ khách</h2>
+  <h3>Bán chịu (ghi nợ)</h3>
+  <ol class="steps">
+    <li>
+      <h3>Chọn khách, rồi nhập tiền khách đưa ít hơn tổng</h3>
+      <p>Ở màn bán hàng, <strong>phải chọn khách</strong>, sau đó nhập <strong>Tiền khách đưa</strong> nhỏ hơn tổng đơn. Phần còn thiếu được ghi nợ cho khách.</p>
+    </li>
+    <li>
+      <h3>Xác nhận thanh toán</h3>
+      <p>Hộp xác nhận hiện rõ <strong>Tổng đơn</strong>, <strong>Khách đưa</strong> và <strong>Ghi nợ</strong>. Kiểm tra rồi xác nhận. Nếu chưa chọn khách mà còn thiếu tiền, app nhắc bạn chọn khách trước.</p>
+    </li>
+  </ol>
+  <h3>Xem ai đang nợ</h3>
+  <p>Menu <strong>Công nợ</strong> liệt kê khách còn nợ, tổng nợ cần thu, và lọc được theo khoảng nợ.</p>
+  <figure>
+    <a href="assets/img/cong-no.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/cong-no.jpg" alt="Màn Công nợ: danh sách khách còn nợ và tổng nợ cần thu"></a>
+    <figcaption>Màn Công nợ: khách còn nợ và tổng nợ cần thu.</figcaption>
+  </figure>
+  <h3>Thu tiền nợ (lập phiếu thu)</h3>
+  <ol class="steps">
+    <li>
+      <h3>Mở khách nợ</h3>
+      <p>Vào <strong>Đối tác</strong> → <strong>Khách hàng</strong>, bấm vào tên khách, mở thẻ <strong>Nợ cần thu từ khách</strong>.</p>
+      <figure>
+        <a href="assets/img/cong-no-khach.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/cong-no-khach.jpg" alt="Thẻ Nợ cần thu từ khách của một khách hàng"></a>
+        <figcaption>Thẻ "Nợ cần thu từ khách": các hóa đơn còn nợ và nút Thanh toán.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h3>Bấm Thanh toán, nhập số tiền khách trả</h3>
+      <p>Bấm <span class="btn-name">Thanh toán</span>, hộp <strong>Lập phiếu thu</strong> hiện ra. Nhập <strong>Thu từ khách</strong>, chọn <strong>Tiền mặt</strong> hoặc <strong>Chuyển khoản</strong>. Dòng <strong>Nợ sau</strong> cho biết khách còn nợ bao nhiêu sau lần thu này.</p>
+      <figure>
+        <a href="assets/img/lap-phieu-thu.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/lap-phieu-thu.jpg" alt="Hộp Lập phiếu thu: số tiền thu, phương thức, nợ sau và bảng phân bổ vào hóa đơn"></a>
+        <figcaption>Hộp Lập phiếu thu. Tiền thu tự trừ vào hóa đơn cũ nhất trước.</figcaption>
+      </figure>
+      <p>Tiền thu được <strong>tự trừ vào hóa đơn cũ nhất trước</strong>. Muốn trừ hóa đơn khác thì sửa số trong cột <strong>Tiền thu</strong> của từng dòng. Xong thì bấm nút xác nhận ở cuối hộp thoại để lưu phiếu thu.</p>
+    </li>
+  </ol>
+
+  <h2 id="no-ncc">Nợ nhà cung cấp</h2>
+  <p>Khi nhập hàng chưa trả hết, phần còn lại thành nợ nhà cung cấp (xem phần <a href="#nhap-hang">Nhập hàng</a>). Xem và trả nợ ở đây:</p>
+  <ol class="steps">
+    <li>
+      <h3>Xem nợ cần trả</h3>
+      <p>Vào <strong>Đối tác</strong> → <strong>Nhà cung cấp</strong>. Cột <strong>Nợ cần trả hiện tại</strong> cho biết còn nợ bao nhiêu, cột <strong>Tổng mua</strong> là tổng tiền đã nhập từ nhà cung cấp đó.</p>
+      <figure>
+        <a href="assets/img/nha-cung-cap.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/nha-cung-cap.jpg" alt="Danh sách nhà cung cấp có cột Nợ cần trả hiện tại và Tổng mua"></a>
+        <figcaption>Danh sách nhà cung cấp và nợ cần trả.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h3>Trả nợ</h3>
+      <p>Bấm vào dòng nhà cung cấp để mở rộng, rồi bấm <span class="btn-name">Thanh toán</span>. Hộp <strong>Thanh toán nợ nhà cung cấp</strong> hiện ra để nhập số tiền trả.</p>
+    </li>
+  </ol>
+
+  <h2 id="xuat-kho">Xuất kho</h2>
+  <p class="lead">Dùng khi hàng ra khỏi kho mà không phải bán: hủy hàng hỏng, hủy hàng hết hạn, dùng nội bộ, tặng khách.</p>
+  <ol class="steps">
+    <li>
+      <h3>Tạo phiếu xuất kho</h3>
+      <p>Vào <strong>Hàng hóa</strong> → <strong>Xuất kho</strong>, bấm <span class="btn-name">Xuất kho</span>, chọn hàng và số lượng, chọn <strong>loại xuất</strong> (hủy hư hỏng, hủy hết hạn, dùng nội bộ, tặng khách, khác) rồi hoàn thành. Tồn kho giảm tương ứng.</p>
+      <figure>
+        <a href="assets/img/xuat-kho.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/xuat-kho.jpg" alt="Màn Xuất kho với bộ lọc trạng thái và loại xuất"></a>
+        <figcaption>Màn Xuất kho. Lọc theo trạng thái (phiếu tạm, đã hoàn thành, đã hủy) và theo loại xuất.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h3>Đối chiếu bằng Kiểm kho</h3>
+      <p>Định kỳ vào <strong>Hàng hóa</strong> → <strong>Kiểm kho</strong> để đối chiếu số tồn thực tế với số trên máy, rồi xem <strong>Báo cáo tồn kho</strong>.</p>
+    </li>
+  </ol>
+
+  <h2 id="sua-sai">Sửa sai: hủy đơn, trả hàng</h2>
+  <p>Vào <strong>Giao dịch</strong> → <strong>Đơn hàng</strong>, bấm vào đơn cần sửa. Trong chi tiết đơn có nút <span class="btn-name">Trả hàng</span> (khách trả lại hàng) và <span class="btn-name">Hủy đơn</span> (đơn lập nhầm). Hủy đơn có thể cần quyền Quản lý.</p>
+  <figure>
+    <a href="assets/img/don-hang.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/don-hang.jpg" alt="Danh sách Đơn hàng"></a>
+    <figcaption>Danh sách đơn hàng. Bấm vào một đơn để xem chi tiết.</figcaption>
+  </figure>
+
+  <h2 id="cuoi-ngay">Cuối ngày</h2>
+  <ul>
+    <li><strong>Sổ quỹ:</strong> xem tiền thu chi trong ngày, đối chiếu tiền mặt cuối ca.</li>
+    <li><strong>Báo cáo, Báo cáo tồn kho:</strong> xem doanh thu và hàng còn trong kho.</li>
+    <li><strong>Sao lưu:</strong> app tự sao lưu. Hãy chép bản sao lưu ra USB hoặc Google Drive, xem <a href="cai-dat.html#sao-luu">phần Sao lưu</a>.</li>
+    <li>Để máy chủ chạy suốt giờ bán. Tắt máy chủ thì các quầy khác không bán được.</li>
+  </ul>
+
+  <div class="pager">
+    <a href="cai-dat.html">← Hướng dẫn cài đặt</a>
+    <a class="next" href="index.html">Trang chủ</a>
+  </div>
+  </article>
+</main>
+<footer>Hướng dẫn Uni POS · cập nhật 21/11/2026</footer>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hướng dẫn cài đặt Uni POS</title>
+  <meta name="description" content="Cài Uni POS lên Windows, thiết lập máy chủ, nối máy khách cùng mạng, cài máy in, sao lưu và gỡ cài đặt.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html" aria-label="Uni POS, trang chủ hướng dẫn">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" stroke="#5fd08a" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M16 17C9 17 5 12.5 5 6c7 0 11 4 11 11z" fill="#5fd08a"/><path d="M16 14c0-6 3.6-9.5 11-9.5 0 6.500-4 9.500-11 9.500z" fill="#8be3ad"/></svg>
+      Uni POS
+    </a>
+    <nav aria-label="Các trang hướng dẫn">
+      <a href="cai-dat.html" aria-current="page">Cài đặt</a>
+      <a href="su-dung.html">Sử dụng</a>
+    </nav>
+  </div>
+</header>
+
+<main class="layout">
+  <nav class="toc" aria-label="Mục lục">
+    <strong>Trong trang này</strong>
+    <ol>
+      <li><a href="#chuan-bi">Trước khi cài</a></li>
+      <li><a href="#cai-app">Cài app lên máy</a></li>
+      <li><a href="#may-chu">Thiết lập máy chủ</a></li>
+      <li><a href="#may-khach">Cài máy khách (quầy khác)</a></li>
+      <li><a href="#cho-ket-noi">Cho phép máy khách kết nối</a></li>
+      <li><a href="#may-in">Cài máy in</a></li>
+      <li><a href="#sao-luu">Sao lưu và cập nhật</a></li>
+      <li><a href="#go-cai-dat">Gỡ cài đặt</a></li>
+      <li><a href="#loi-thuong-gap">Gặp lỗi thường gặp</a></li>
+    </ol>
+  </nav>
+  <article>
+  <section class="hero">
+    <h1>Hướng dẫn cài đặt</h1>
+    <p>Làm lần lượt từng bước. Cài xong là bán hàng được ngay.</p>
+  </section>
+
+  
+
+  <h2 id="chuan-bi">Trước khi cài</h2>
+  <ul>
+    <li><strong>Máy tính chạy Windows 10 trở lên.</strong></li>
+    <li><strong>Chọn một máy làm máy chủ.</strong> Máy này lưu toàn bộ dữ liệu bán hàng và phải được mở khi các quầy khác đang bán. Nên là máy ít hỏng, ít bị tắt.</li>
+    <li>Các máy khác (quầy thu ngân, kho) là <strong>máy khách</strong>. Tất cả phải <strong>cùng một mạng</strong> (cáp mạng hoặc Wi-Fi của cùng một bộ phát).</li>
+    <li>Cửa hàng chỉ có <strong>một máy</strong>? Chỉ cần cài máy chủ, bỏ qua phần máy khách.</li>
+  </ul>
+  <div class="tip"><strong>Mẹo:</strong> nhờ người lắp mạng giữ <strong>địa chỉ IP cố định</strong> cho máy chủ. Khi cần nhập tay địa chỉ máy chủ thì địa chỉ không đổi.</div>
+
+  <h2 id="cai-app">Cài app lên máy</h2>
+  <ol class="steps">
+    <li>
+      <h3>Chạy file cài đặt</h3>
+      <p>Bấm đúp vào file <code>unipos-….exe</code> do bên hỗ trợ gửi. Cài <strong>không cần quyền quản trị</strong> và chỉ cài cho tài khoản Windows đang dùng.</p>
+      <div class="warn">
+        <p><strong>Windows có thể hiện cảnh báo</strong> kiểu "Windows protected your PC" vì app chưa có chữ ký số. Đây là bình thường. Bấm <span class="btn-name">More info</span> (Thông tin thêm), rồi <span class="btn-name">Run anyway</span> (Vẫn chạy).</p>
+      </div>
+      <p>Nếu phần mềm diệt virus chặn hoặc cách ly file, nhờ người quản trị thêm <strong>ngoại lệ</strong> cho thư mục cài và thư mục dữ liệu của Uni POS.</p>
+    </li>
+    <li>
+      <h3>Chọn nơi cài và nơi lưu dữ liệu</h3>
+      <p>Trình cài hiện hai trang chọn thư mục. <strong>Để mặc định và bấm tiếp</strong> là được.</p>
+      <ul>
+        <li><strong>Nơi cài app:</strong> thư mục chương trình.</li>
+        <li><strong>Thư mục dữ liệu:</strong> nơi lưu dữ liệu cửa hàng. Mặc định nằm trong thư mục ẩn của tài khoản Windows trên ổ C (<code>…\AppData\Local\UniPOS</code>). Muốn dễ sao lưu thì chọn ổ khác, ví dụ <code>D:\UniPOS</code>.</li>
+      </ul>
+      <div class="note">Trong thư mục dữ liệu có hai thư mục con: <code>database</code> (cơ sở dữ liệu và bản sao lưu) và <code>settings</code> (cài đặt của app). Đừng xóa hay sửa tay các thư mục này.</div>
+    </li>
+    <li>
+      <h3>Mở Uni POS</h3>
+      <p>Cài xong, bấm biểu tượng <strong>Uni POS</strong> trên màn hình nền để mở. Lần đầu mở sẽ hiện màn hình <strong>Cài đặt lần đầu</strong>.</p>
+    </li>
+  </ol>
+  <details>
+    <summary>Dành cho người hỗ trợ: cài tự động bằng file cài đặt sẵn</summary>
+    <p>Nếu để file <code>unipos-setup.json</code> cạnh file cài, trình cài sẽ cài tự động, không hỏi gì, rồi mở app. File này có thể sẵn vai trò máy, tên cửa hàng, thư mục dữ liệu và tài khoản Quản lý đầu tiên. Dùng xong file bị xóa khỏi nơi app đọc. Đừng để file này nằm lâu vì có thể chứa mật khẩu.</p>
+  </details>
+
+  <h2 id="may-chu">Thiết lập máy chủ</h2>
+  <p class="lead">Làm một lần, trên máy được chọn làm máy chủ.</p>
+  <ol class="steps">
+    <li>
+      <h3>Chọn "Máy chủ"</h3>
+      <p>Ở màn hình <strong>Cài đặt lần đầu</strong>, chọn <span class="btn-name">Máy chủ (lưu dữ liệu)</span>.</p>
+    </li>
+    <li>
+      <h3>Điền thông tin cửa hàng và tài khoản</h3>
+      <ul>
+        <li><strong>Tên cửa hàng.</strong> Logo có thể thêm sau.</li>
+        <li><strong>Số điện thoại của Quản lý chính.</strong> Đây là tên đăng nhập.</li>
+        <li><strong>Mật khẩu</strong> (ít nhất 8 ký tự), nhập lại lần nữa.</li>
+      </ul>
+      <p>Bấm <span class="btn-name">Bắt đầu sử dụng</span>.</p>
+      <figure>
+        <a href="assets/img/cai-dat-lan-dau-may-chu.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/cai-dat-lan-dau-may-chu.jpg" alt="Màn hình Cài đặt lần đầu, chọn Máy chủ, đã điền tên cửa hàng và tài khoản"></a>
+        <figcaption>Màn hình Cài đặt lần đầu khi chọn Máy chủ. Bấm vào ảnh để xem lớn.</figcaption>
+      </figure>
+      <div class="warn"><strong>Nhớ mật khẩu.</strong> Ghi lại số điện thoại và mật khẩu ở nơi an toàn. Quản lý chính là tài khoản có đủ quyền để tạo tài khoản cho nhân viên.</div>
+    </li>
+    <li>
+      <h3>Đăng nhập</h3>
+      <p>Đăng nhập bằng số điện thoại và mật khẩu vừa tạo. Xong. Nếu cửa hàng chỉ có một máy, bạn có thể bắt đầu bán hàng ngay.</p>
+      <figure>
+        <a href="assets/img/dang-nhap.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/dang-nhap.jpg" alt="Màn hình đăng nhập"></a>
+        <figcaption>Màn hình đăng nhập.</figcaption>
+      </figure>
+    </li>
+  </ol>
+
+  <h2 id="may-khach">Cài máy khách (quầy khác)</h2>
+  <p class="lead">Làm trên từng máy còn lại. <strong>Máy chủ phải đang mở</strong> và đã bật cho phép máy khách kết nối (xem phần kế tiếp).</p>
+  <ol class="steps">
+    <li>
+      <h3>Cài app như ở trên</h3>
+      <p>Làm lại phần "Cài app lên máy" trên máy khách.</p>
+    </li>
+    <li>
+      <h3>Chọn "Máy khách"</h3>
+      <p>Ở màn hình <strong>Cài đặt lần đầu</strong>, chọn <span class="btn-name">Máy khách (kết nối LAN)</span>. App <strong>tự tìm máy chủ</strong> trong mạng và kết nối khi chỉ có một máy chủ.</p>
+      <p>Nếu chưa thấy, bấm <span class="btn-name">Tìm lại máy chủ</span>.</p>
+    </li>
+    <li>
+      <h3>Nếu vẫn không tìm thấy: nhập địa chỉ máy chủ</h3>
+      <p>Mở mục <strong>Nhập địa chỉ máy chủ</strong>, gõ địa chỉ IP của máy chủ (ví dụ <code>192.168.1.100</code>) rồi bấm <span class="btn-name">Kiểm tra và kết nối</span>. Địa chỉ này xem ở máy chủ: <strong>Thông tin ứng dụng</strong> → khối <strong>Kết nối máy khách</strong>.</p>
+      <figure>
+        <a href="assets/img/cai-dat-lan-dau-may-khach.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/cai-dat-lan-dau-may-khach.jpg" alt="Màn hình Cài đặt lần đầu khi chọn Máy khách, có ô nhập địa chỉ máy chủ"></a>
+        <figcaption>Máy khách: tìm máy chủ, hoặc nhập địa chỉ máy chủ.</figcaption>
+      </figure>
+      <p>Lần sau mở app, máy khách <strong>nhớ máy chủ</strong> và tự kết nối, chỉ cần đăng nhập.</p>
+    </li>
+  </ol>
+
+  <h2 id="cho-ket-noi">Cho phép máy khách kết nối</h2>
+  <p class="lead">Chỉ cần làm khi có máy khách. Làm trên <strong>máy chủ</strong>, bằng tài khoản Quản lý.</p>
+  <ol class="steps">
+    <li>
+      <h3>Bật công tắc</h3>
+      <p>Vào <strong>Thông tin ứng dụng</strong>, kéo xuống khối <strong>Kết nối máy khách</strong>, bật công tắc <span class="btn-name">Cho phép các máy khác trong mạng kết nối vào máy chủ này</span>.</p>
+      <figure>
+        <a href="assets/img/ket-noi-may-khach.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/ket-noi-may-khach.jpg" alt="Khối Kết nối máy khách trong Thông tin ứng dụng, có công tắc cho phép các máy khác kết nối"></a>
+        <figcaption>Khối Kết nối máy khách. Công tắc mặc định tắt; bật lên thì hiện thêm địa chỉ máy chủ và tình trạng kết nối.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h3>Đồng ý khi Windows hỏi quyền quản trị</h3>
+      <p>Windows hiện hộp thoại hỏi quyền. Bấm <span class="btn-name">Có</span>. Nếu máy dùng tài khoản thường, Windows sẽ đòi mật khẩu của người quản trị máy. Uni POS tự mở lại sau khoảng 10 giây.</p>
+    </li>
+    <li>
+      <h3>Kiểm tra tình trạng</h3>
+      <p>Thẻ <strong>Tình trạng</strong> hiện "Các máy khách kết nối được" là xong. Nếu hiện cảnh báo, bấm <span class="btn-name">Sửa kết nối</span> rồi làm theo hướng dẫn trên màn hình.</p>
+    </li>
+  </ol>
+  <div class="note"><strong>Vì sao mặc định tắt?</strong> Cài một máy thì không cần mở gì ra mạng, nên Windows không hỏi gì. Chỉ khi nối nhiều máy mới cần bật.</div>
+
+  <h2 id="may-in">Cài máy in</h2>
+  <p class="lead">Mỗi máy tính có danh sách máy in riêng. Làm trên máy nào cần in thì cài ở máy đó.</p>
+  <ol class="steps">
+    <li>
+      <h3>Mở trang Máy in</h3>
+      <p>Vào <strong>Quản lý</strong> → <strong>Máy in</strong>.</p>
+      <figure>
+        <a href="assets/img/may-in.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/may-in.jpg" alt="Trang Máy in trong phần Quản lý"></a>
+        <figcaption>Trang Máy in.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <h3>Tìm hoặc nhập máy in</h3>
+      <ul>
+        <li>Bấm <span class="btn-name">Tìm máy in</span>. Máy in đã cài trong Windows (USB hoặc đã thêm sẵn) và máy in mạng tìm thấy sẽ hiện ở mục "Tìm thấy, chưa thêm".</li>
+        <li>Không thấy máy in mạng? Gõ <strong>địa chỉ IP</strong> của máy in vào ô nhập rồi bấm <span class="btn-name">Thêm máy in</span>.</li>
+        <li>Bấm <span class="btn-name">Thêm</span> ở máy in cần dùng. Có thể thêm nhiều máy in và đặt tên gọi riêng, ví dụ "Quầy 1".</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Chọn máy in mặc định, in thử</h3>
+      <p>Bấm chọn một máy làm <strong>mặc định</strong>. Bấm <span class="btn-name">In thử</span> để kiểm tra, rồi <span class="btn-name">Lưu</span>. Khi in hóa đơn, app dùng máy mặc định; trên màn hóa đơn có thể đổi sang máy khác cho riêng lần in đó.</p>
+    </li>
+  </ol>
+  <div class="tip">
+    <p><strong>Mẹo cho máy in nhiệt qua mạng:</strong> nhờ người lắp mạng giữ IP cố định cho máy in. Máy in cùng mạng với máy tính và nghe cổng 9100 thì mới in thẳng được.</p>
+    <p>Nếu máy in nhiệt không in được chữ có dấu, bật <strong>In không dấu</strong> trên trang Máy in.</p>
+  </div>
+
+  <h2 id="sao-luu">Sao lưu và cập nhật</h2>
+  <h3>Sao lưu dữ liệu</h3>
+  <p>Vào <strong>Quản lý</strong> → <strong>Sao lưu và khôi phục</strong>. App tự sao lưu theo lịch, và có nút <span class="btn-name">Sao lưu ngay</span>. Bản sao lưu nằm trên máy chủ, <strong>chưa an toàn</strong> nếu máy chủ hỏng. Hãy chép thêm ra <strong>USB hoặc Google Drive</strong>, tối thiểu mỗi tuần.</p>
+  <div class="danger"><strong>Quan trọng:</strong> cơ sở dữ liệu và bản sao lưu cùng nằm trên một ổ. Mất ổ đó là mất cả hai. Luôn giữ ít nhất một bản sao lưu ở nơi khác.</div>
+  <h3>Cập nhật phần mềm</h3>
+  <p>Khi có bản mới, máy chủ tự tải và tự cài vào giờ đã đặt (mặc định 22:00), nếu lúc đó không còn máy nào đang bán. Máy khách tự cập nhật theo máy chủ. Xem tình trạng ở <strong>Thông tin ứng dụng</strong>.</p>
+
+  <h2 id="go-cai-dat">Gỡ cài đặt</h2>
+  <p>Vào <strong>Cài đặt Windows</strong> → <strong>Ứng dụng</strong> → chọn <strong>Uni POS</strong> → <strong>Gỡ cài đặt</strong>. App hỏi có xóa dữ liệu cửa hàng không:</p>
+  <ul>
+    <li><span class="btn-name">Không</span> (mặc định): chỉ gỡ app, <strong>giữ nguyên dữ liệu</strong> để cài lại sau.</li>
+    <li><span class="btn-name">Có</span>: app hiện thư mục chứa cơ sở dữ liệu và bản sao lưu, cho bạn mở ra để <strong>sao chép ra ngoài</strong>. Sau đó hỏi xác nhận lần cuối (mặc định "Không" là hủy). Chỉ bấm Có khi đã chép xong.</li>
+  </ul>
+  <div class="warn">Xóa dữ liệu <strong>không khôi phục được</strong>. Nếu chưa chắc, chọn Không.</div>
+
+  <h2 id="loi-thuong-gap">Gặp lỗi thường gặp</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Hiện tượng</th><th>Cách xử lý</th></tr></thead>
+      <tbody>
+        <tr><td>Máy khách không tìm thấy máy chủ</td><td>Kiểm tra máy chủ đang mở app, hai máy cùng mạng, và công tắc "Cho phép các máy khác kết nối" ở máy chủ đã bật. Bấm <strong>Tìm lại máy chủ</strong>, hoặc nhập địa chỉ IP của máy chủ.</td></tr>
+        <tr><td>Thẻ Tình trạng báo Windows đang chặn</td><td>Ở máy chủ, bấm <strong>Sửa kết nối</strong> và đồng ý hộp quyền quản trị.</td></tr>
+        <tr><td>Wi-Fi của cửa hàng là Wi-Fi khách, hoặc bật "cô lập thiết bị"</td><td>Các máy không thấy nhau. Đổi sang Wi-Fi chính của cửa hàng hoặc cắm cáp mạng.</td></tr>
+        <tr><td>Hai bộ phát (hai mạng khác nhau)</td><td>Tìm tự động không xuyên được giữa hai mạng. Đặt máy chủ ở phía bộ phát chính và nhập tay địa chỉ máy chủ ở máy khách. Tốt nhất đặt bộ phát phụ ở chế độ cầu nối (AP) để chung một mạng.</td></tr>
+        <tr><td>Máy chủ báo cổng đang bị chương trình khác dùng</td><td>Uni POS tự chuyển sang cổng trống khác, bạn không cần làm gì. Máy khách tự tìm ra cổng mới.</td></tr>
+        <tr><td>Máy in không in</td><td>Kiểm tra máy in bật, cùng mạng, đã chọn đúng máy mặc định; bấm <strong>In thử</strong> ở trang Máy in.</td></tr>
+        <tr><td>Đăng nhập tài khoản Windows khác thì không thấy Uni POS</td><td>App cài theo từng tài khoản Windows. Hãy luôn dùng một tài khoản cố định cho cửa hàng.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pager">
+    <a href="index.html">← Trang chủ</a>
+    <a class="next" href="su-dung.html">Hướng dẫn sử dụng →</a>
+  </div>
+</article>
+</main>
+<footer>Hướng dẫn Uni POS · cập nhật 21/11/2026</footer>
+</body>
+</html>
